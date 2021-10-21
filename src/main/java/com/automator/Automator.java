@@ -1,6 +1,5 @@
 package com.automator;
 
-import java.sql.Driver;
 import java.util.HashMap;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +23,10 @@ public class Automator {
         AddressGenerator_Page.generate();
         List<String> addressList= AddressGenerator_Page.getListItems();
 
+        DriverHandler.wait(5);
         DriverHandler.visitUrl("https://transportnsw.info/trip");
         // debug
-        DriverHandler.wait(5);
+        System.out.println("debug");
         HashMap<Integer, HashMap<Integer, String>> mappy = TransportRoute_Page.findRoutes(addressList);
         System.out.println(mappy.get(1).get(2));
 

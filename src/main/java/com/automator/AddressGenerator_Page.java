@@ -18,6 +18,7 @@ public class AddressGenerator_Page {
         try {
             List<WebElement> addressContainers = DriverHandler.findMulti(AddressGenerator_Objects.addressContainer);
             for (WebElement item : addressContainers){
+                //debug
                 addresses.add(DriverHandler.getText(item).substring(8));
             }
         } catch (TripPlannerException e){

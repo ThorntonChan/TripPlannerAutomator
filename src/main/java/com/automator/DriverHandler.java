@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
@@ -53,6 +53,14 @@ public class DriverHandler {
             throw new TPStaleReferenceError(childElement, e);
         }
     }
+    public static Boolean hasChild(WebElement element, By by) throws TripPlannerException{
+        try {
+            element.findElement(by);
+        } catch (StaleElementReferenceException e){
+            return false;
+        }
+        return true;
+    }
     public static void click(By by) throws TripPlannerException{
         try{
             Automator.driver.findElement(by).click();
@@ -74,6 +82,15 @@ public class DriverHandler {
     public static void input(By by, String input) throws TripPlannerException{
         try{  
             Automator.driver.findElement(by).sendKeys(input);
+        } catch (ElementNotInteractableException e){ //(WebDriverException)
+            throw new TPElementNotClickable(by, e);
+        } catch (NoSuchElementException e){
+            throw new TPElementNotFoundError(by, e);
+        }
+    }
+    public static void clear(By by) throws TripPlannerException{
+        try{  
+            Automator.driver.findElement(by).clear();
         } catch (ElementNotInteractableException e){ //(WebDriverException)
             throw new TPElementNotClickable(by, e);
         } catch (NoSuchElementException e){
@@ -114,7 +131,7 @@ public class DriverHandler {
     public static WebElement eWaitForElement(WebDriverWait eWaitDriver, By by, int waitTimeOut) throws TripPlannerException{
         try {
             return eWaitDriver.until(ExpectedConditions.elementToBeClickable(by));
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             throw new TPElementNotFoundError(by, e);
         }
     }
@@ -123,7 +140,7 @@ public class DriverHandler {
             fWaitDriver.withTimeout(Duration.ofSeconds(timeout));
             fWaitDriver.pollingEvery(Duration.ofSeconds(poll));
             return fWaitDriver.until(ExpectedConditions.elementToBeClickable(by));
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             throw new TPElementNotFoundError(by, e);
         }
     }

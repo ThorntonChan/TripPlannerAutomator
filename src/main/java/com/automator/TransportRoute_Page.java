@@ -2,7 +2,6 @@ package com.automator;
 
 import java.util.List;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.util.HashMap;
 
@@ -23,12 +22,25 @@ public class TransportRoute_Page {
                         System.out.println(from);
                         System.out.println(to);
                         // debug
-                        DriverHandler.input(TransportRoute_Object.fromInput, from + Keys.ENTER);                        
-                        DriverHandler.wait(3);
-                        DriverHandler.click(DriverHandler.eWaitForElement(Automator.eWaitDriver, TransportRoute_Object.bestResult, 5));
-                        DriverHandler.input(TransportRoute_Object.toInput, to + Keys.ENTER);
-                        DriverHandler.wait(3);
-                        DriverHandler.click(DriverHandler.fWaitForElement(Automator.fWaitDriver, TransportRoute_Object.bestResult, 1, 5));
+                        DriverHandler.clear(TransportRoute_Object.fromInput);                        
+                        DriverHandler.input(TransportRoute_Object.fromInput, from);                        
+                        DriverHandler.wait(1);
+                        WebElement fromResult = DriverHandler.eWaitForElement(Automator.eWaitDriver, TransportRoute_Object.bestResult0, 5);
+                        if (DriverHandler.hasChild(fromResult, TransportRoute_Object.resultText) && DriverHandler.find(TransportRoute_Object.resultText).getText().equals("My current location")){
+                            DriverHandler.click(TransportRoute_Object.bestResult1);
+                        } else {
+                            DriverHandler.click(TransportRoute_Object.bestResult0);
+                        }
+                        DriverHandler.wait(1);
+                        DriverHandler.clear(TransportRoute_Object.toInput);                        
+                        DriverHandler.input(TransportRoute_Object.toInput, to);
+                        DriverHandler.wait(1);
+                        WebElement toResult = DriverHandler.fWaitForElement(Automator.fWaitDriver, TransportRoute_Object.bestResult0, 1, 5);
+                        if (DriverHandler.hasChild(toResult, TransportRoute_Object.resultText) && DriverHandler.find(TransportRoute_Object.resultText).getText().equals("My current location")){
+                            DriverHandler.click(TransportRoute_Object.bestResult1);
+                        } else {
+                            DriverHandler.click(TransportRoute_Object.bestResult0);
+                        }
                         List<WebElement> timelines = DriverHandler.findMulti(TransportRoute_Object.timelines);
                         for (WebElement timeline : timelines){
                             String currentEarliest = DriverHandler.getText(timeline).substring(8);
