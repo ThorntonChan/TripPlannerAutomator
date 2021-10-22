@@ -1,4 +1,4 @@
-package com.automator;
+package com.automator.exception;
 
 
 public class TripPlannerException extends Exception {

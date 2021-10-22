@@ -1,7 +1,10 @@
-package com.automator;
+package com.automator.page;
 
 import java.util.List;
 
+import com.automator.exception.TripPlannerException;
+import com.automator.handler.DriverHandler;
+import com.automator.object.TransportRoute_Object;
 import org.openqa.selenium.WebElement;
 import java.util.HashMap;
 
@@ -22,10 +25,10 @@ public class TransportRoute_Page {
                         System.out.println(from);
                         System.out.println(to);
                         // debug
-                        DriverHandler.clear(TransportRoute_Object.fromInput);                        
+                        DriverHandler.clear(TransportRoute_Object.fromInput);
                         DriverHandler.input(TransportRoute_Object.fromInput, from);                        
                         DriverHandler.wait(1);
-                        WebElement fromResult = DriverHandler.eWaitForElement(Automator.eWaitDriver, TransportRoute_Object.bestResult0, 5);
+                        WebElement fromResult = DriverHandler.eWaitForElement(TransportRoute_Object.bestResult0, 5);
                         if (DriverHandler.hasChild(fromResult, TransportRoute_Object.resultText) && DriverHandler.find(TransportRoute_Object.resultText).getText().equals("My current location")){
                             DriverHandler.click(TransportRoute_Object.bestResult1);
                         } else {
@@ -35,7 +38,7 @@ public class TransportRoute_Page {
                         DriverHandler.clear(TransportRoute_Object.toInput);                        
                         DriverHandler.input(TransportRoute_Object.toInput, to);
                         DriverHandler.wait(1);
-                        WebElement toResult = DriverHandler.fWaitForElement(Automator.fWaitDriver, TransportRoute_Object.bestResult0, 1, 5);
+                        WebElement toResult = DriverHandler.fWaitForElement(TransportRoute_Object.bestResult0, 1, 5);
                         if (DriverHandler.hasChild(toResult, TransportRoute_Object.resultText) && DriverHandler.find(TransportRoute_Object.resultText).getText().equals("My current location")){
                             DriverHandler.click(TransportRoute_Object.bestResult1);
                         } else {

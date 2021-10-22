@@ -1,4 +1,4 @@
-package com.automator;
+package com.automator.object;
 
 import org.openqa.selenium.By;
 

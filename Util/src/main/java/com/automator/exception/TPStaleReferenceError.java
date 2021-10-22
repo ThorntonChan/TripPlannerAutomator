@@ -1,4 +1,4 @@
-package com.automator;
+package com.automator.exception;
 import org.openqa.selenium.WebElement;
 
 
