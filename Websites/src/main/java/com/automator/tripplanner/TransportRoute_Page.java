@@ -1,10 +1,9 @@
-package com.automator.page;
+package com.automator.tripplanner;
 
 import java.util.List;
 
 import com.automator.exception.TripPlannerException;
 import com.automator.handler.DriverHandler;
-import com.automator.object.TransportRoute_Object;
 import org.openqa.selenium.WebElement;
 import java.util.HashMap;
 

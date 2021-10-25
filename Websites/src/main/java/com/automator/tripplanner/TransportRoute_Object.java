@@ -1,9 +1,10 @@
-package com.automator.object;
+package com.automator.tripplanner;
 
 import org.openqa.selenium.By;
 
 
 public class TransportRoute_Object {
+    public static String primaryURL = "https://transportnsw.info/trip";
     public static By fromInput = new By.ById("tniFromTripLocation");
     public static By toInput = new By.ById("tniToTripLocation");
     public static By routes = new By.ByClassName("card-wrapper");

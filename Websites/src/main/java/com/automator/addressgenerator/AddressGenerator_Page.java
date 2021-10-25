@@ -1,11 +1,11 @@
-package com.automator.page;
+package com.automator.addressgenerator;
 
 import java.util.List;
 import java.util.ArrayList;
 
 import com.automator.exception.TripPlannerException;
 import com.automator.handler.DriverHandler;
-import com.automator.object.AddressGenerator_Objects;
+import com.automator.addressgenerator.AddressGenerator_Objects;
 import org.openqa.selenium.WebElement;
 
 public class AddressGenerator_Page {

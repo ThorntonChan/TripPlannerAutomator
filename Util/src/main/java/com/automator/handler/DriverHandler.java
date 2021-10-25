@@ -14,6 +14,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -24,16 +25,38 @@ import java.util.concurrent.TimeUnit;
 
 
 public class DriverHandler {
-    public static WebDriver driver = new ChromeDriver();
-    public static WebDriverWait eWaitDriver = new WebDriverWait(driver, 5);
-    public static FluentWait<WebDriver> fWaitDriver = new FluentWait<WebDriver>(driver);
+     public static WebDriver driver;
+     public static WebDriverWait eWaitDriver;
+     public static FluentWait<WebDriver> fWaitDriver;
 
+    private static WebDriver getDriver() {
+         if (driver == null) {
+             System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver.exe");
+//             ChromeOptions options = new ChromeOptions();
+//             options.setBinary("C:\\Progra~1\\Google\\Chrome\\Application\\chrome.exe");
+             driver = new ChromeDriver();
+             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+         }
+        return driver;
+    }
+    private static WebDriverWait geteWaitDriver() {
+        if (eWaitDriver == null) {
+            return new WebDriverWait(getDriver(), 5);
+        }
+        return eWaitDriver;
+    }
+    private static FluentWait<WebDriver> getfWaitDriver() {
+        if (fWaitDriver == null) {
+            return new FluentWait<WebDriver>(getDriver());
+        }
+        return fWaitDriver;
+    }
     public static void visitUrl(String url){
-        driver.get(url);
+        getDriver().get(url);
     }
     public static WebElement find(By by) throws TripPlannerException{
         try{
-            return driver.findElement(by);
+            return getDriver().findElement(by);
         } catch (NoSuchElementException e){
             throw new TPElementNotFoundError(by, e);
         }
@@ -46,7 +69,7 @@ public class DriverHandler {
         }
     }
     public static List<WebElement> findMulti(By by) throws TripPlannerException{
-        List<WebElement> results = driver.findElements(by);
+        List<WebElement> results = getDriver().findElements(by);
         if (results.size() == 0) {
             throw new TPElementNotFoundError(by, new Exception("No elements were found"));
         }
@@ -71,7 +94,7 @@ public class DriverHandler {
     }
     public static void click(By by) throws TripPlannerException{
         try{
-            driver.findElement(by).click();
+            getDriver().findElement(by).click();
         } catch (NoSuchElementException e){
             throw new TPElementNotFoundError(by, e);
         } catch (ElementNotInteractableException e){ //(WebDriverException)
@@ -88,8 +111,8 @@ public class DriverHandler {
         }
     }
     public static void input(By by, String input) throws TripPlannerException{
-        try{  
-            driver.findElement(by).sendKeys(input);
+        try{
+            getDriver().findElement(by).sendKeys(input);
         } catch (ElementNotInteractableException e){ //(WebDriverException)
             throw new TPElementNotClickable(by, e);
         } catch (NoSuchElementException e){
@@ -97,8 +120,8 @@ public class DriverHandler {
         }
     }
     public static void clear(By by) throws TripPlannerException {
-        try{  
-            driver.findElement(by).clear();
+        try{
+            getDriver().findElement(by).clear();
         } catch (ElementNotInteractableException e){ //(WebDriverException)
             throw new TPElementNotClickable(by, e);
         } catch (NoSuchElementException e){
@@ -107,7 +130,7 @@ public class DriverHandler {
     }
     public static void inputDropdown(By by, String input) throws TripPlannerException{
         try{  
-            Select dropdown = new Select(driver.findElement(by));
+            Select dropdown = new Select(getDriver().findElement(by));
             dropdown.selectByValue(input);
         } catch (NoSuchElementException e){
             throw new TPElementNotFoundError(by, e);
@@ -138,7 +161,7 @@ public class DriverHandler {
     }
     public static WebElement eWaitForElement(By by, int waitTimeOut) throws TripPlannerException{
         try {
-            return eWaitDriver.until(ExpectedConditions.elementToBeClickable(by));
+            return geteWaitDriver().until(ExpectedConditions.elementToBeClickable(by));
         } catch (TimeoutException e) {
             throw new TPElementNotFoundError(by, e);
         }
@@ -150,6 +173,11 @@ public class DriverHandler {
             return fWaitDriver.until(ExpectedConditions.elementToBeClickable(by));
         } catch (TimeoutException e) {
             throw new TPElementNotFoundError(by, e);
+        }
+    }
+    public static void quit(){
+        if (driver != null){
+            driver.quit();
         }
     }
 }
