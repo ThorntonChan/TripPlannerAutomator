@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TransportRoute_Service {
-    public static HashMap<Integer, HashMap<Integer, String>> findRoutes(List<String> addressList){
+    public static HashMap<Integer, HashMap<Integer, HashMap<String, String>>> findRoutes(List<String> addressList){
         DriverHandler.wait(5);
         DriverHandler.visitUrl(TransportRoute_Object.primaryURL);
         return TransportRoute_Page.findRoutes(addressList);
