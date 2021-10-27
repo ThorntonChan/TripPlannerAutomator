@@ -1,6 +1,8 @@
 package com.automator.exception;
 
 
+import com.automator.handler.LogHandler;
+
 public class TripPlannerException extends Exception {
     public String errorMessage;
     public Throwable error;
@@ -12,7 +14,7 @@ public class TripPlannerException extends Exception {
         error = e;
     }
     public void log(){
-        System.out.println(errorMessage);
+        LogHandler.log(errorMessage);
     }
     public void details(){
         System.out.println("Operation unsuccessful");

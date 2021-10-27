@@ -2,8 +2,11 @@ package com.automator.tripplanner;
 
 import java.util.List;
 
+import com.automator.exception.FileException;
 import com.automator.exception.TripPlannerException;
 import com.automator.handler.DriverHandler;
+import com.automator.handler.FileHandler;
+import com.automator.handler.LogHandler;
 import org.openqa.selenium.WebElement;
 import java.util.HashMap;
 
@@ -31,9 +34,12 @@ public class TransportRoute_Page {
             } else {
                 DriverHandler.click(TransportRoute_Object.bestResult0);
             }
+            LogHandler.log("Input locations success: " + to + " - " + from);
             DriverHandler.wait(1);
         } catch (TripPlannerException e) {
+            LogHandler.log("Input locations failure: " + to + " - " + from);
             e.log();
+//            LogHandler
         }
     }
 
@@ -50,7 +56,7 @@ public class TransportRoute_Page {
             System.out.println(earliestArrival);
             return earliestArrival;
         } catch (TripPlannerException e){
-            e.log();
+            LogHandler.log("No suitable routes found");
             return "No routes found";
         }
     }
@@ -58,6 +64,15 @@ public class TransportRoute_Page {
     public static HashMap<Integer, HashMap<Integer, HashMap<String, String>>> findRoutes(List<String> addressList){
         HashMap<Integer, HashMap<Integer, HashMap<String, String>>> mappy = new HashMap<Integer, HashMap<Integer, HashMap<String, String>>>();
         System.out.println("starting loop");
+//        List<String> addressList = new ArrayList<String>();
+//        try {
+//            FileHandler.read("C:\\Addresses.txt");
+//            while (FileHandler.hasNext()){
+//                addressList.add(FileHandler.readLine());
+//            }
+//        } catch (FileException e) {
+//            System.out.println("error reading from Addresses.txt");
+//        }
         for (int i = 0; i < addressList.size(); i++){
             HashMap<Integer, HashMap<String, String>> submappy = new HashMap<Integer, HashMap<String, String>>();
             for (int j = 0 ; j < addressList.size(); j++){
