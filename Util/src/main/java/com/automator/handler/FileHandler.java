@@ -5,10 +5,9 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FileHandler {
-    public File file;
+    private File file;
     private Scanner sc;
     private FileWriter fw;
-
     public FileHandler(String pathname) throws FileException {
         try {
             File file = new File(pathname);
@@ -61,10 +60,9 @@ public class FileHandler {
                 System.out.println("Could not write to file");
             };
         } else {
-            throw new FileException("file not specified");
+            System.out.println("Output file not specified");
         }
     }
-
     public void close(){
         if (sc != null) {
             sc.close();

@@ -15,7 +15,7 @@ public class AddressGenerator_Page {
         try {
             DriverHandler.inputDropdown(AddressGenerator_Objects.citySelector, targetCity);
         } catch (TripPlannerException e){
-            ReportHandler.log("change city unsuccessful");
+            ReportHandler.output("change city unsuccessful");
             e.log();
         }
     }
@@ -28,16 +28,11 @@ public class AddressGenerator_Page {
                 addresses.add(DriverHandler.getText(item).substring(8));
             }
         } catch (TripPlannerException e){
-            ReportHandler.log("Get addresses unsuccessful");
+            ReportHandler.output("Get addresses unsuccessful");
             e.log();
         }
-        try{
-            FileHandler
-            for (String address : addresses){
-                ReportHandler.log(address + "\n");
-            }
-        } catch (FileException e){
-            System.out.println("Error on exporting addresses");
+        for (String address : addresses){
+            ReportHandler.output(address + "\n");
         }
         return addresses;
     }

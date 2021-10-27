@@ -32,10 +32,10 @@ public class TransportRoute_Page {
             } else {
                 DriverHandler.click(TransportRoute_Object.bestResult0);
             }
-            ReportHandler.log("Input locations success: " + to + " - " + from);
+            ReportHandler.output("Input locations success: " + to + " - " + from);
             DriverHandler.wait(1);
         } catch (TripPlannerException e) {
-            ReportHandler.log("Input locations failure: " + to + " - " + from);
+            ReportHandler.output("Input locations failure: " + to + " - " + from);
             e.log();
 //            LogHandler
         }
@@ -54,7 +54,7 @@ public class TransportRoute_Page {
             System.out.println(earliestArrival);
             return earliestArrival;
         } catch (TripPlannerException e){
-            ReportHandler.log("No suitable routes found");
+            ReportHandler.output("No suitable routes found");
             return "No routes found";
         }
     }

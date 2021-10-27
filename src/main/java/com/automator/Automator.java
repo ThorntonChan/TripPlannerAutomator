@@ -10,12 +10,9 @@ import java.io.IOException;
 public class Automator {
 
     public static void main( String[] args ){
-        try {
-            FileHandler logFileHandler = new FileHandler("C:\\log.txt");
-            ReportHandler reportHandler = new ReportHandler(logFileHandler, false);
-        } catch (FileException e){
-            System.out.println("Log file not accessible");
-            System.out.println(e);
+        if (!ReportHandler.init("C:\\log.txt", false)){
+            System.out.println("Reporting could not be initialised");
+            System.exit(1);
         }
         TransportRoute_Service.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
     }
