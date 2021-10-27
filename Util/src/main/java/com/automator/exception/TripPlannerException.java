@@ -1,7 +1,7 @@
 package com.automator.exception;
 
 
-import com.automator.handler.LogHandler;
+import com.automator.handler.ReportHandler;
 
 public class TripPlannerException extends Exception {
     public String errorMessage;
@@ -14,7 +14,7 @@ public class TripPlannerException extends Exception {
         error = e;
     }
     public void log(){
-        LogHandler.log(errorMessage);
+        ReportHandler.output(errorMessage);
     }
     public void details(){
         System.out.println("Operation unsuccessful");

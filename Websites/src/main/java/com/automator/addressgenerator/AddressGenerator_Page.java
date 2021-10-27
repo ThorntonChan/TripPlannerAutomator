@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import com.automator.exception.FileException;
 import com.automator.exception.TripPlannerException;
 import com.automator.handler.DriverHandler;
-import com.automator.handler.LogHandler;
+import com.automator.handler.ReportHandler;
 import org.openqa.selenium.WebElement;
 
 public class AddressGenerator_Page {
@@ -15,7 +15,7 @@ public class AddressGenerator_Page {
         try {
             DriverHandler.inputDropdown(AddressGenerator_Objects.citySelector, targetCity);
         } catch (TripPlannerException e){
-            LogHandler.log("change city unsuccessful");
+            ReportHandler.log("change city unsuccessful");
             e.log();
         }
     }
@@ -28,15 +28,14 @@ public class AddressGenerator_Page {
                 addresses.add(DriverHandler.getText(item).substring(8));
             }
         } catch (TripPlannerException e){
-            LogHandler.log("Get addresses unsuccessful");
+            ReportHandler.log("Get addresses unsuccessful");
             e.log();
         }
         try{
-            LogHandler.options("C:\\Addresses.txt", false);
+            FileHandler
             for (String address : addresses){
-                LogHandler.log(address + "\n");
+                ReportHandler.log(address + "\n");
             }
-            LogHandler.options("C:\\log.txt", true); // pathname needs to be stored as a variable somewhere
         } catch (FileException e){
             System.out.println("Error on exporting addresses");
         }

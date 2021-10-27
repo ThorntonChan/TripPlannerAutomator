@@ -2,11 +2,9 @@ package com.automator.tripplanner;
 
 import java.util.List;
 
-import com.automator.exception.FileException;
 import com.automator.exception.TripPlannerException;
 import com.automator.handler.DriverHandler;
-import com.automator.handler.FileHandler;
-import com.automator.handler.LogHandler;
+import com.automator.handler.ReportHandler;
 import org.openqa.selenium.WebElement;
 import java.util.HashMap;
 
@@ -34,10 +32,10 @@ public class TransportRoute_Page {
             } else {
                 DriverHandler.click(TransportRoute_Object.bestResult0);
             }
-            LogHandler.log("Input locations success: " + to + " - " + from);
+            ReportHandler.log("Input locations success: " + to + " - " + from);
             DriverHandler.wait(1);
         } catch (TripPlannerException e) {
-            LogHandler.log("Input locations failure: " + to + " - " + from);
+            ReportHandler.log("Input locations failure: " + to + " - " + from);
             e.log();
 //            LogHandler
         }
@@ -56,7 +54,7 @@ public class TransportRoute_Page {
             System.out.println(earliestArrival);
             return earliestArrival;
         } catch (TripPlannerException e){
-            LogHandler.log("No suitable routes found");
+            ReportHandler.log("No suitable routes found");
             return "No routes found";
         }
     }

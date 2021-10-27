@@ -1,39 +1,71 @@
 package com.automator.handler;
 import com.automator.exception.FileException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
-
 public class FileHandler {
-    protected static File file;
-    protected static Scanner sc;
+    public File file;
+    private Scanner sc;
+    private FileWriter fw;
 
-//    protected FileHandler(){};
-    public static void read(String pathname) throws FileException {
+    public FileHandler(String pathname) throws FileException {
         try {
             File file = new File(pathname);
             Scanner sc = new Scanner(file);
         } catch (IOException e){
-            throw new FileException("Error Occurred while reading file", e);
+            e.printStackTrace();
         }
-//        catch (FileNotFoundException e) {
-//            throw new FileException("File not found", e);
-//        }
     }
-    private static Boolean hasNext(){
-        return sc.hasNext();
-    }
-    public static String readLine(){
-        if (sc.hasNext()){
+    public String readLine(){
+        if (sc != null && sc.hasNext()){
             return sc.nextLine();
         } else {
-            return ""; // exception
+            return null; // exception
         }
     }
-    public static void close() throws FileException {
+
+    public Boolean exists(){
+        return file != null && file.exists();
+    }
+//    create
+    public void create(){
+        try {
+            file.createNewFile();
+        } catch (IOException e){
+            System.out.println("File already exists");
+        }
+    }
+//    delete
+    public void delete(){
+        if (file != null && file.exists()){
+            file.delete();
+        }
+    }
+//    write
+    public void write(String string){
+        if(file != null){
+            if (!file.exists()) {
+                create();
+            }
+            if (fw == null) {
+                try {
+                    fw = new FileWriter(file, true);
+                } catch (IOException e){
+                    System.out.println("could not write instantiate FileWriter");
+                }
+            }
+            try {
+                fw.write(string);
+            } catch (IOException e){
+                System.out.println("Could not write to file");
+            };
+        } else {
+            throw new FileException("file not specified");
+        }
+    }
+
+    public void close(){
         if (sc != null) {
             sc.close();
         }
