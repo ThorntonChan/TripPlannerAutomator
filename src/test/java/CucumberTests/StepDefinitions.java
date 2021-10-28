@@ -6,26 +6,25 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-
+import org.junit.Assert;
 import java.util.List;
 
 public class StepDefinitions {
-
     @Given("user is on the Australian subdirectory of the address generator")
     public void navToAddressGenerator(){
         TransportRoute_Service.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
     }
-    @When("^the city \"(.*?)\" has been selected$")
-    public void selectCity(String cityName){
-        List<String> addresses = AddressGenerator_Service.generateAddresses(cityName);
+//    @And("the city \"(.*?)\" has been selected")
+    @And("the city (.*?) has been selected")
+    public void theCityHasBeenSelected(String city) {
+        AddressGenerator_Service.changeCity(city);
     }
-    @And("the generate button is clicked")
+    @When("the generate button is clicked")
     public void clickGenerate(){
-        TransportRoute_Service.findRoutes(addresses);
+        AddressGenerator_Service.returnResults();
     }
-    @Then("a list of addresses should be visible")
-    public void retrieveAddresses(){
-        TransportRoute_Service.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
+    @Then("10 addresses should be returned")
+    public void returnAddresses(){
+        Assert.assertEquals(AddressGenerator_Service.getListItems().size(), 10);
     }
-
 }

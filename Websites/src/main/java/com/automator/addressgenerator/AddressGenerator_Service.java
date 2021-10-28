@@ -6,11 +6,25 @@ import java.util.List;
 
 public class AddressGenerator_Service {
 
-    public static List<String> generateAddresses(String city){
+    public static void landingPage(){
         DriverHandler.visitUrl(AddressGenerator_Objects.primaryURL);
-        AddressGenerator_Page.changeCity(city);
-        AddressGenerator_Page.generate();
-        return AddressGenerator_Page.getListItems();
-
     }
+    public static void changeCity(String city){
+        AddressGenerator_Page.changeCity(city);
+    }
+    public static void returnResults(){
+        AddressGenerator_Page.generate();
+    }
+    public static List<String> getListItems(){
+        return AddressGenerator_Page.getListItems();
+    }
+    public static List<String> generateAddresses(String city){
+        landingPage();
+        changeCity(city);
+        returnResults();
+        return getListItems();
+    }
+
+
+
 }
