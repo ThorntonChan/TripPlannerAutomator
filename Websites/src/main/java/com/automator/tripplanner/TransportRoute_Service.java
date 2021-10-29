@@ -11,7 +11,14 @@ public class TransportRoute_Service {
         DriverHandler.visitUrl(TransportRoute_Object.primaryURL);
         return TransportRoute_Page.findRoutes(addressList);
     }
-    public static void terminate(){
-        DriverHandler.quit();
+    public static void visitUrl(){
+        DriverHandler.visitUrl(TransportRoute_Object.primaryURL);
+    }
+
+    public static void inputDestinations(String to, String from){
+        TransportRoute_Service.inputDestinations(to, from);
+    }
+    public static String getEarliestArrival(){
+        return TransportRoute_Service.getEarliestArrival();
     }
 }
