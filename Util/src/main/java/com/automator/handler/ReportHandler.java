@@ -2,11 +2,9 @@ package com.automator.handler;
 
 import com.automator.exception.FileException;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
-import java.util.Scanner;
 
 
 public class ReportHandler {

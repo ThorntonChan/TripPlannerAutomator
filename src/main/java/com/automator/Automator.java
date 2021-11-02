@@ -14,6 +14,6 @@ public class Automator {
             System.out.println("Reporting could not be initialised");
             System.exit(1);
         }
-        TransportRoute_Service.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
+//        TransportRoute_Service.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
     }
 }
