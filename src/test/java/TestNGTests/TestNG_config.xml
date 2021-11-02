@@ -1,0 +1,26 @@
+<suite name="phase1">
+    <test name="Address generation">
+        <classes>
+            <class name="TestNGTests.AddressGeneratorTestNG" />
+        </classes>
+    </test>
+</suite>
+<suite name="phase2">
+    <test name="Route finding">
+        <classes>
+            <class name="TestNGTests.TripPlannerTestNG" />
+        </classes>
+    </test>
+</suite>
+
+<!--<test name="test groups">-->
+<!--<groups>-->
+<!--    <run>-->
+<!--        <include name="regression" />-->
+<!--    </run>-->
+<!--</groups>-->
+<!--<classes>-->
+<!--    <class-->
+<!--            name="com.baeldung.SummationServiceTest" />-->
+<!--</classes>-->
+<!--</test>-->
