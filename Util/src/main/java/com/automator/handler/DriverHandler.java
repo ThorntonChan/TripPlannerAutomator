@@ -30,7 +30,7 @@ public class DriverHandler {
 
     private static WebDriver getDriver() {
          if (driver == null) {
-             System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver.exe");
+             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 //             ChromeOptions options = new ChromeOptions();
 //             options.setBinary("C:\\Progra~1\\Google\\Chrome\\Application\\chrome.exe");
              driver = new ChromeDriver();
@@ -167,9 +167,9 @@ public class DriverHandler {
     }
     public static WebElement fWaitForElement(By by, int poll, int timeout) throws TripPlannerException{
         try {
-            fWaitDriver.withTimeout(Duration.ofSeconds(timeout));
-            fWaitDriver.pollingEvery(Duration.ofSeconds(poll));
-            return fWaitDriver.until(ExpectedConditions.elementToBeClickable(by));
+            getfWaitDriver().withTimeout(Duration.ofSeconds(timeout));
+            getfWaitDriver().pollingEvery(Duration.ofSeconds(poll));
+            return getfWaitDriver().until(ExpectedConditions.elementToBeClickable(by));
         } catch (TimeoutException e) {
             throw new TPElementNotFoundError(by, e);
         }

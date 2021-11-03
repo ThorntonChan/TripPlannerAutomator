@@ -1,14 +1,15 @@
 <suite name="TripPlannerRouteFinder">
-    <test name="Address generation">
-        <classes>
-            <class name="TestNGTests.AddressGeneratorTestNG" />
-        </classes>
-    </test>
+<!--    <test name="Address generation">-->
+<!--        <classes>-->
+<!--            <class name="TestNGTests.AddressGeneratorTestNG" />-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="Route finding">
         <parameter name="to" value="130 George St Parramatta"/>
         <parameter name="from" value="61 John Road Cherrybrook"/>
         <classes>
             <class name="TestNGTests.TripPlannerTestNG" />
+<!--                TODO: methods -->
         </classes>
     </test>
 </suite>

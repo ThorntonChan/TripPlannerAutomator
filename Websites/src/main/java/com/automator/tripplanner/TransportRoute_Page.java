@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class TransportRoute_Page {
 
-    private static void inputLocations(String to, String from){
+    public static void inputLocations(String to, String from){
         try {
             DriverHandler.clear(TransportRoute_Object.fromInput);
             DriverHandler.input(TransportRoute_Object.fromInput, from);
@@ -41,7 +41,7 @@ public class TransportRoute_Page {
         }
     }
 
-    private static String getEarliestArrival(){
+    public static String getEarliestArrival(){
         try {
             String earliestArrival = "a";
             List<WebElement> timelines = DriverHandler.findMulti(TransportRoute_Object.timelines);

@@ -16,9 +16,9 @@ public class TransportRoute_Service {
     }
 
     public static void inputDestinations(String to, String from){
-        TransportRoute_Service.inputDestinations(to, from);
+        TransportRoute_Page.inputLocations(to, from);
     }
     public static String getEarliestArrival(){
-        return TransportRoute_Service.getEarliestArrival();
+        return TransportRoute_Page.getEarliestArrival();
     }
 }

@@ -25,7 +25,7 @@ import java.util.Map;
 public class StepDefinitions {
     private TransportRoute_Service trs;
     StepUtil shared;
-
+    public StepDefinitions(){};
     public StepDefinitions(TransportRoute_Service trs) {
         this.trs = trs;
     }
