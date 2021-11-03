@@ -1,7 +1,7 @@
 package com.automator.exception;
 
 
-import com.automator.handler.ReportHandler;
+//import com.automator.handler.ReportHandler;
 
 public class TripPlannerException extends Exception {
     public String errorMessage;
@@ -14,7 +14,8 @@ public class TripPlannerException extends Exception {
         error = e;
     }
     public void log(){
-        ReportHandler.output(errorMessage);
+//        ReportHandler.output(errorMessage); cyclic dependency debug
+        System.out.println(errorMessage);
     }
     public void details(){
         System.out.println("Operation unsuccessful");
