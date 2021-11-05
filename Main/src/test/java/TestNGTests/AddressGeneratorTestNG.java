@@ -1,25 +1,15 @@
 package TestNGTests;
 
-//import io.cucumber.junit.CucumberOptions;
-//import io.cucumber.testng.AbstractTestNGCucumberTests;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Test;
 
-//@CucumberOptions(features="src\\test\\java\\CucumberTests", glue={"StepDefinitions"})
-public class AddressGeneratorTestNG {
-//    @BeforeClass
-//    public void setup() {
-//        //...
-//    }
-//
-//    @Test
-//    public void testInstructions() {
-//        //...
-//    }
-//
-//    @AfterClass
-//    public void tearDown() {
-//        //...
-//    }
+@CucumberOptions(features="src\\test\\resources\\features", glue={"CucumberTests"}) //CucumberTests.StepDefinitions?
+public class AddressGeneratorTestNG extends AbstractTestNGCucumberTests {
 }
+
+//@CucumberOptions(features="src\\test\\java\\CucumberTests",glue={"CucumberTests.StepDefinitions"},snippets= CucumberOptions.SnippetType.CAMELCASE, plugin={"pretty", "html:report", "json:reports.json"})
+//public class AddressGeneratorTestNG extends AbstractTestNGCucumberTests {
+//
+//}

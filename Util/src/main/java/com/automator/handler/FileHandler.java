@@ -8,10 +8,10 @@ public class FileHandler {
     private File file;
     private Scanner sc;
     private FileWriter fw;
-    public FileHandler(String pathname) throws FileException {
+    public FileHandler(String pathname){
         try {
-            File file = new File(pathname);
-            Scanner sc = new Scanner(file);
+            file = new File(pathname);
+            sc = new Scanner(file);
         } catch (IOException e){
             e.printStackTrace();
         }

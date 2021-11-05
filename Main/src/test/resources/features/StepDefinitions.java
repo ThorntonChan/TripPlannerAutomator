@@ -1,16 +1,15 @@
-package CucumberTests;
 
 import com.automator.addressgenerator.AddressGenerator_Service;
 import com.automator.handler.ReportHandler;
 import com.automator.tripplanner.TransportRoute_Service;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.Before;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import java.util.List;
@@ -80,7 +79,7 @@ public class StepDefinitions {
         String ea = TransportRoute_Service.getEarliestArrival();
         Assert.assertEquals(ea, arrival);
     }
-    @Given("^the following addresses:$")
+    @Given("the following addresses:")
     public void givenTheAddressesAsDataTable(DataTable table) {
         List<Map<String, String>> addressesListMap = table.asMaps();
         List<List<String>> addressesListList = table.asLists();
@@ -99,5 +98,4 @@ public class StepDefinitions {
     public void thereMustBeALinkPresentToTripplanner() {
         //new page object with by href to tripplanner
     }
-
 }

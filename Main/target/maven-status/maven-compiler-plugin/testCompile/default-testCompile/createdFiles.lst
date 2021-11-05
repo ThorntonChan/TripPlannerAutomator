@@ -1,0 +1,7 @@
+com\automator\AppTest.class
+CucumberTests\StepUtil.class
+CucumberTests\RunTest.class
+TestNGTests\IntegrateCuke.class
+TestNGTests\TripPlannerTestNG.class
+CucumberTests\StepDefinitions.class
+TestNGTests\AddressGeneratorTestNG.class
