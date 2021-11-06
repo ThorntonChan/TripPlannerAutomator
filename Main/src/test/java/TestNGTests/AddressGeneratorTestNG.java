@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features="src\\test\\resources\\features", glue={"CucumberTests"}) //CucumberTests.StepDefinitions?
+@CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"}) //CucumberTests.StepDefinitions?
 public class AddressGeneratorTestNG extends AbstractTestNGCucumberTests {
 }
 

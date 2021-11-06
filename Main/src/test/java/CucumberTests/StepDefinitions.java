@@ -3,14 +3,14 @@ package CucumberTests;
 import com.automator.addressgenerator.AddressGenerator_Service;
 import com.automator.handler.ReportHandler;
 import com.automator.tripplanner.TransportRoute_Service;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
+import cucumber.api.DataTable;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Given;
 import org.junit.Assert;
 
 import java.util.List;
@@ -23,12 +23,12 @@ import java.util.Map;
 //constructor in each class with dta member
 
 public class StepDefinitions {
-    private TransportRoute_Service trs;
+//    private TransportRoute_Service trs;
     StepUtil shared;
     public StepDefinitions(){};
-    public StepDefinitions(TransportRoute_Service trs) {
-        this.trs = trs;
-    }
+//    public StepDefinitions(TransportRoute_Service trs) {
+//        this.trs = trs;
+//    }
 
     @Before
     public void before(Scenario scenario){
@@ -47,7 +47,8 @@ public class StepDefinitions {
     @Given("user is on the Australian subdirectory of the address generator")
     public void navToAddressGenerator(){
         System.out.println(shared.foo);
-        trs.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
+        AddressGenerator_Service.generateAddresses("Sydney");
+//        trs.findRoutes(AddressGenerator_Service.generateAddresses("Sydney"));
     }
 //    @And("the city \"(.*?)\" has been selected")
     @And("the city (.*?) has been selected")
@@ -82,8 +83,8 @@ public class StepDefinitions {
     }
     @Given("^the following addresses:$")
     public void givenTheAddressesAsDataTable(DataTable table) {
-        List<Map<String, String>> addressesListMap = table.asMaps();
-        List<List<String>> addressesListList = table.asLists();
+//        List<Map<String, String>> addressesListMap = table.asMaps(String.class, String.class);
+//        List<List<String>> addressesListList = table.asLists(String.class);
 //        for (Map<String, String> address : addresses) {
 //            String from = address.get("from");
 //            String to = address.get("to");

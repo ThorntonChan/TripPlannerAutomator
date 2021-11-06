@@ -25,3 +25,6 @@ hs_err_pid*
 .project
 .settings/
 .idea/
+Main/target/
+Util/target/
+Websites/target/

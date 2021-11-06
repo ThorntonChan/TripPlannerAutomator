@@ -6,7 +6,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 import org.testng.annotations.*;
 
-@CucumberOptions(features="src\\test\\resources\\features", glue={"CucumberTests"})
+@CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"})
 public class IntegrateCuke {
     private TestNGCucumberRunner tngcr;
 
