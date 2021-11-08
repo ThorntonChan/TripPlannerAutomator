@@ -2,9 +2,7 @@ package TestNGTests;
 
 
 
-import io.cucumber.testng.CucumberOptions;
-import io.cucumber.testng.PickleWrapper;
-import io.cucumber.testng.TestNGCucumberRunner;
+import io.cucumber.testng.*;
 import org.testng.annotations.*;
 
 @CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"})
@@ -20,8 +18,8 @@ public class IntegrateCuke {
         }
     }
     @Test(dataProvider = "features")
-    public void feature(PickleWrapper cucumberFeature) {
-        tngcr.runScenario(cucumberFeature.getPickle());
+    public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
+        tngcr.runScenario(pickleWrapper.getPickle());
     }
 
     @DataProvider

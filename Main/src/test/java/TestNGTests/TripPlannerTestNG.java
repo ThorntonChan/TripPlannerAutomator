@@ -6,7 +6,6 @@ import com.automator.tripplanner.TransportRoute_Service;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -43,7 +42,7 @@ public class TripPlannerTestNG {
 //        };
 //    }
     @DataProvider(name = "provideAddresses")
-    public Iterator<Object[]> testData() throws IOException {
+    public Iterator<Object[]> testData() {
         List<Object[]> addresses = new ArrayList<>();
         FileHandler data = new FileHandler("C:\\Users\\tchan3\\Documents\\dev\\TripPlannerAutomator\\testdata.txt");
         while (true){
