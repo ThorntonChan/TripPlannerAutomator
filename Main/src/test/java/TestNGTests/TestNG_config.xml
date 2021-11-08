@@ -16,7 +16,7 @@
 <!--                </methods>-->
 <!--            </class>-->
 <!--            <class name="TestNGTests.IntegrateCuke" />-->
-            <class name="TestNGTests.AddressGeneratorTestNG" />
+            <class name="TestNGTests.IntegrateCuke" />
         </classes>
     </test>
 </suite>
