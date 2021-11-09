@@ -5,12 +5,17 @@ Feature: Public Transport Routing
 
   Scenario Outline: Earliest Arrival Routing
     Given the user navigates to the TransportNSW trip planner
-    When "<from>" and "<to>" are input as destinations
+    When dataprovider data is input as destinations
     Then The earliest arrival is returned
-  Examples:
-    | from | to |
-    | 61 John Road Cherrybrook | 130 George Street Parramatta |
-    | 42 County Driver Cherrybrook | Kent Street Sydney       |
+#
+#    Scenario Outline: Earliest Arrival Routing
+#    Given the user navigates to the TransportNSW trip planner
+#    When "<from>" and "<to>" are input as destinations
+#    Then The earliest arrival is returned
+#  Examples:
+#    | from | to |
+#    | 61 John Road Cherrybrook | 130 George Street Parramatta |
+#    | 42 County Driver Cherrybrook | Kent Street Sydney       |
 
 #  @DataTable
 #  Scenario:

@@ -1,5 +1,6 @@
 package CucumberTests;
 
+import TestNGTests.TestNGCucumberParams;
 import com.automator.addressgenerator.AddressGenerator_Service;
 import com.automator.handler.ReportHandler;
 import com.automator.tripplanner.TransportRoute_Service;
@@ -105,4 +106,10 @@ public class StepDefinitions {
         //
     }
 
+    @When("dataprovider data is input as destinations")
+    public void dataproviderDataIsInputAsDestinations() {
+        String from = TestNGCucumberParams.dataList.get(0);
+        String to = TestNGCucumberParams.dataList.get(1);
+        TransportRoute_Service.inputDestinations(to, from);
+    }
 }
