@@ -6,10 +6,6 @@ import com.automator.tripplanner.TransportRoute_Service;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 public class TripPlannerTestNG {
     @BeforeClass
     public void setup() {

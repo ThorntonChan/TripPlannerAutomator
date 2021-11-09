@@ -2,27 +2,29 @@ package TestNGTests;
 
 
 
-import io.cucumber.testng.*;
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.TestNGCucumberRunner;
+import cucumber.runtime.model.CucumberFeature;
 import org.testng.annotations.*;
 
 @CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"})
 public class IntegrateCuke {
-    private TestNGCucumberRunner tngcr;
+    private TestNGCucumberRunner tngcr = new TestNGCucumberRunner(this.getClass());
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() {
-        try {
-            tngcr = new TestNGCucumberRunner(this.getClass());
-        } catch (Exception e) {
-            System.out.println(this.getClass().getName());
-        }
+        System.out.println("running cucumber from testng");
+//        try {
+//            if tngcr = new TestNGCucumberRunner(this.getClass());
+//        } catch (Exception e) {
+//            System.out.println(this.getClass().getName());
+//        }
     }
 //    @Test(dataProvider = "features")
     @Test
     public void feature() {
-        Object[][] scenarios =  tngcr.provideScenarios();
-        for (Object[] scenario : scenarios) {
-            Object wrapper = scenario[0];
+        for (CucumberFeature feature : tngcr.getFeatures()) {
+            tngcr.runCucumber(feature);
         }
     }
 
