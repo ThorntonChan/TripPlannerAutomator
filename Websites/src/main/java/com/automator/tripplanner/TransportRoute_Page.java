@@ -60,6 +60,7 @@ public class TransportRoute_Page {
     }
 
     public static HashMap<Integer, HashMap<Integer, HashMap<String, String>>> findRoutes(List<String> addressList){
+//        ReportHandler.init("C:\\loglog.txt", true);
         HashMap<Integer, HashMap<Integer, HashMap<String, String>>> mappy = new HashMap<Integer, HashMap<Integer, HashMap<String, String>>>();
         System.out.println("starting loop");
 //        List<String> addressList = new ArrayList<String>();

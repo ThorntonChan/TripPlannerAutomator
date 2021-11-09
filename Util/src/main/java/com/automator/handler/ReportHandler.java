@@ -30,8 +30,9 @@ public class ReportHandler {
                 } catch (IOException e){
                     System.out.println("Could not be written to output file");
                 }
-            } else {
-                System.out.println("Output file not specified");
             }
+//            else {
+//                System.out.println("Output file not specified");
+//            }
     }
 }

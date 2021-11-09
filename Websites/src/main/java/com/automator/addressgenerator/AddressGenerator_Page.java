@@ -13,6 +13,7 @@ public class AddressGenerator_Page {
 
     public static void changeCity(String targetCity){
         try {
+//            ReportHandler.init("C:\\loglog.txt", true);
             DriverHandler.inputDropdown(AddressGenerator_Objects.citySelector, targetCity);
         } catch (TripPlannerException e){
             ReportHandler.output("change city unsuccessful");

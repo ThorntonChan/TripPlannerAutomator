@@ -59,9 +59,10 @@ public class FileHandler {
             } catch (IOException e){
                 System.out.println("Could not write to file");
             };
-        } else {
-            System.out.println("Output file not specified");
         }
+//        else {
+//            System.out.println("Output file not specified");
+//        }
     }
     public void close(){
         if (sc != null) {

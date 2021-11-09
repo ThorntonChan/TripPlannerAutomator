@@ -1,7 +1,7 @@
 Feature: Address Generator
   Scenario Outline: Generating addresses
     Given user is on the Australian subdirectory of the address generator
-    And the city <city> has been selected
+    And the city "<city>" has been selected
     When the generate button is clicked
     Then 10 addresses should be returned
     Examples:
@@ -9,9 +9,17 @@ Feature: Address Generator
   | Sydney |
   | Melbourne |
   | Adelaide |
+
+
+
+
+
+
+
+
+
+
 #  | Sydney | Melbourne | Adelaide |
-
-
 
 #    Map
 #    List
