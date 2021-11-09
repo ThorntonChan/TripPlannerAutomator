@@ -19,7 +19,7 @@
 <!--    </test>-->
     <test name="IntegrateCuke CucumberTestRuner composition class">
         <classes>
-            <class name="TestNGTests.AddressGeneratorTestNG" />
+            <class name="TestNGTests.IntegrateCuke" />
         </classes>
     </test>
 </suite>

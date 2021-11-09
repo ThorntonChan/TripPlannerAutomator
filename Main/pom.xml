@@ -36,11 +36,11 @@
 <!--                            <include>src\test\java\CucumberTests\RunTest.java</include>-->
 <!--                            <include>src\test\java\resources\features\AddressGenerator.feature</include>-->
 <!--                        </includes>-->
-<!--                        <suiteXmlFiles>-->
-<!--                            <suiteXmlFile>-->
-<!--                                src\test\java\TestNGTests\TestNG_config.xml-->
-<!--                            </suiteXmlFile>-->
-<!--                        </suiteXmlFiles>-->
+                        <suiteXmlFiles>
+                            <suiteXmlFile>
+                                src\test\java\TestNGTests\TestNG_config.xml
+                            </suiteXmlFile>
+                        </suiteXmlFiles>
                     </configuration>
                 </plugin>
             </plugins>

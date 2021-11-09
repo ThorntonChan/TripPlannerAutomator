@@ -17,15 +17,19 @@ public class IntegrateCuke {
             System.out.println(this.getClass().getName());
         }
     }
-    @Test(dataProvider = "features")
-    public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
-        tngcr.runScenario(pickleWrapper.getPickle());
+//    @Test(dataProvider = "features")
+    @Test
+    public void feature() {
+        Object[][] scenarios =  tngcr.provideScenarios();
+        for (Object[] scenario : scenarios) {
+            Object wrapper = scenario[0];
+        }
     }
 
-    @DataProvider
-    public Object[][] features() {
-        return tngcr.provideScenarios();
-    }
+//    @DataProvider
+//    public Object[][] features() {
+//        return tngcr.provideScenarios();
+//    }
 
     @AfterClass(alwaysRun = true)
     public void tearDownClass() throws Exception {

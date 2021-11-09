@@ -30,7 +30,10 @@ public class DriverHandler {
 
     private static WebDriver getDriver() {
          if (driver == null) {
-             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+//             windows
+//             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+//             mac
+             System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 //             ChromeOptions options = new ChromeOptions();
 //             options.setBinary("C:\\Progra~1\\Google\\Chrome\\Application\\chrome.exe");
              driver = new ChromeDriver();
