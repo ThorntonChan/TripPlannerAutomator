@@ -2,8 +2,14 @@ package TestNGTests;
 
 
 
+<<<<<<< HEAD
 import com.automator.handler.FileHandler;
 import io.cucumber.testng.*;
+=======
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.TestNGCucumberRunner;
+import cucumber.runtime.model.CucumberFeature;
+>>>>>>> versiontesting
 import org.testng.annotations.*;
 
 import java.util.ArrayList;
@@ -11,16 +17,18 @@ import java.util.List;
 
 @CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"})
 public class IntegrateCuke {
-    private TestNGCucumberRunner tngcr;
+    private TestNGCucumberRunner tngcr = new TestNGCucumberRunner(this.getClass());
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() {
-        try {
-            tngcr = new TestNGCucumberRunner(this.getClass());
-        } catch (Exception e) {
-            System.out.println(this.getClass().getName());
-        }
+        System.out.println("running cucumber from testng");
+//        try {
+//            if tngcr = new TestNGCucumberRunner(this.getClass());
+//        } catch (Exception e) {
+//            System.out.println(this.getClass().getName());
+//        }
     }
+<<<<<<< HEAD
     @Test(dataProvider = "features")
     public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper, List<String> listData) {
         if (listData != null){
@@ -46,6 +54,13 @@ public class IntegrateCuke {
             } else {
                 scenariosObj[i][2] = null;
             }
+=======
+//    @Test(dataProvider = "features")
+    @Test
+    public void feature() {
+        for (CucumberFeature feature : tngcr.getFeatures()) {
+            tngcr.runCucumber(feature);
+>>>>>>> versiontesting
         }
         return scenariosObj;
     }
