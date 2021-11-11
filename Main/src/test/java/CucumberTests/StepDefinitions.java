@@ -61,7 +61,7 @@ public class StepDefinitions {
     }
     @Given("the user navigates to the TransportNSW trip planner")
     public void theUserIsOnTheTransportNSWTripPlanner() {
-        TransportRoute_Service.visitUrl();
+
     }
 
     @When("\"(.*?)\" and \"(.*?)\" are input as destinations")

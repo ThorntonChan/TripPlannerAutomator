@@ -1,9 +1,10 @@
+@Routing
 Feature: Public Transport Routing
   Background: User is able to navigate to tfnsw tripplanner from homepage
     Given user is on tfnsw homepage
     Then there must be a link present to tripplanner
 
-  Scenario Outline: Earliest Arrival Routing
+  Scenario: Earliest Arrival Routing
     Given the user navigates to the TransportNSW trip planner
     When dataprovider data is input as destinations
     Then The earliest arrival is returned
