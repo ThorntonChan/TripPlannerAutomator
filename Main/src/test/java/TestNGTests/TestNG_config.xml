@@ -17,16 +17,16 @@
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="RestAssured">-->
+<!--    <test name="RestTests">-->
 <!--        <classes>-->
-<!--            <class name="RestAssured.RestAssuredTests" />-->
+<!--            <class name="RestTests.RestAssuredTests" />-->
 <!--        </classes>-->
 <!--    </test>-->
-    <test name="IntegrateCuke CucumberTestRuner composition class">
-        <classes>
-            <class name="TestNGTests.IntegrateCuke" />
-        </classes>
-    </test>
+<!--    <test name="IntegrateCuke CucumberTestRuner composition class">-->
+<!--        <classes>-->
+<!--            <class name="TestNGTests.IntegrateCuke" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
 
 <!--<test name="test groups">-->

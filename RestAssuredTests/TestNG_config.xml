@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AddressGenerator Cucumber Abstract class">
+    <test name="Address generation Abstract class">
+        <classes>
+            <class name="RestTests.RestAssuredTests" />
+        </classes>
+    </test>
+</suite>

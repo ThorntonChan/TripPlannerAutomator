@@ -12,6 +12,7 @@
         <module>Util</module>
         <module>Websites</module>
         <module>Main</module>
+        <module>RestAssuredTests</module>
     </modules>
 
     <name>tripplanner</name>
