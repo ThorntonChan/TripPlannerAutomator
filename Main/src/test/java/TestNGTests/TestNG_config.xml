@@ -17,9 +17,9 @@
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="RestTests">-->
+<!--    <test name="DadJokeAPIExample">-->
 <!--        <classes>-->
-<!--            <class name="RestTests.RestAssuredTests" />-->
+<!--            <class name="DadJokeAPIExample.RestAssuredTests" />-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="IntegrateCuke CucumberTestRuner composition class">-->

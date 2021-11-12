@@ -4,8 +4,10 @@ import io.restassured.*;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import static org.hamcrest.core.IsEqual.equalTo;
+
 public class RestHandler {
-    public static Response response;
+    public Response response;
 
     public RestHandler(){}
 
@@ -18,10 +20,22 @@ public class RestHandler {
         if (response != null){
             return response.asString();
         } else {
-            //error
+            System.out.println("response not exists");
             return null;
         }
     }
+
+    public void basicRequest(String header_s, String header_o, String request_type, String endpoint){
+        response = RestAssured
+                .with()
+                .header(header_s, header_o)
+                .when()
+                .request(request_type, endpoint)
+                .then()
+                .statusCode(200)
+                .extract().response();
+    }
+
 //    public static RequestSpecification given(){
 //        return given();
 //    }
