@@ -2,8 +2,10 @@ package com.automator.handler;
 
 import io.restassured.*;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
 public class RestHandler {
-    public Response response;
+    public static Response response;
 
     public RestHandler(){}
 
@@ -20,7 +22,12 @@ public class RestHandler {
             return null;
         }
     }
-
+//    public static RequestSpecification given(){
+//        return given();
+//    }
+//    public static RequestSpecification header(String h, String value){
+//        return header(h, value);
+//    }
 
 
 }
