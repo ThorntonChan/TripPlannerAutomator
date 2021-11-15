@@ -2,7 +2,7 @@
 <suite name="RestAssuredTests">
     <test name="RestAssured">
         <classes>
-            <class name="DadJokeAPIExample.RestAssuredTests" />
+<!--            <class name="DadJokeAPIExample.RestAssuredTests" />-->
             <class name="Binance.BasicAPITests" />
         </classes>
     </test>

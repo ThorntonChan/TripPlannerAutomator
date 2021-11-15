@@ -6,3 +6,5 @@ Main/target/
 RestAssuredTests/target/
 Util/target/
 Websites/target/
+RestAssuredTests/src/test/java/Binance/BinanceModel.java
+
