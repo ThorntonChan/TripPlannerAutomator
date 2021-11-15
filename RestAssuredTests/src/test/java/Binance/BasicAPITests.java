@@ -31,7 +31,7 @@ public class BasicAPITests {
             apiHandler.header("apiKey", BinanceModel.APIKey);
             apiHandler.header("secretKey", BinanceModel.Secretkey);
             apiHandler.body(requestParams.toJSONString());
-            apiHandler.post("/api/v3/order");
+            apiHandler.post(baseUrl + "/api/v3/order");
             System.out.println("Response: " + apiHandler.asString());
         } catch (Exception e){
             System.out.println(e);

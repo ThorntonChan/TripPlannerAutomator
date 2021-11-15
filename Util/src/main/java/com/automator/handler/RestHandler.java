@@ -18,8 +18,12 @@ public class RestHandler {
     public void get(String endpoint){
         response = RestAssured.get(endpoint);
     }
-    public void post(String endpoint){
-        response = RestAssured.post(endpoint);
+    public void post(String endpoint) throws Exception {
+        if (requestSpecification != null) {
+            response = requestSpecification.post(endpoint);
+        } else {
+            throw new Exception("requestSpecification undefined, was there a call to given()?");
+        }
     }
 
     public String asString(){
