@@ -27,8 +27,11 @@ public class CucumberAPITest {
     }
 
     @Test(dataProvider = "getTestData")
-    public void feature(List<String> data) {
-        TestNGCucumberParams.dataList = data;
+    public void feature(Object[] testData) {
+        List<String> data = new ArrayList<String>();
+        data.add((String) testData[0]);
+        data.add((String) testData[1]);
+        CucumberAPIParams.dataList = data;
         for (CucumberFeature feature : tngcr.getFeatures()) {
             tngcr.runCucumber(feature);
         }
@@ -36,24 +39,22 @@ public class CucumberAPITest {
 
 
     @DataProvider
-    public Iterator<Object[]> getTestData() {
-        List<Object[]> testData = new ArrayList<>();
-        List<String> addresses = new ArrayList<String>();
-        FileHandler data = new FileHandler("/Users/thornton/Documents/projects/TripPlannerAutomator/joketestdata.txt");
-//        FileHandler data = new FileHandler("C:\\Users\\tchan3\\Documents\\dev\\TripPlannerAutomator\\joketestdata.txt");
+    public Object[][] getTestData() {
+        Object[][] testData = new Object[3][2];
+        FileHandler data = new FileHandler("C:\\Users\\tchan3\\Documents\\dev\\TripPlannerAutomator\\joketestdata.txt");
+        int i = 0;
         while (true){
-            String from = data.readLine();
-            String to = data.readLine();
-            if (from == null || to == null) {
+            String input1 = data.readLine();
+            String input2 = data.readLine();
+            if (input1 == null || input2 == null) {
                 break;
             } else {
-                addresses.add(to);
-                addresses.add(from);
-                testData.add(new Object[] { addresses });
+                testData[i] = new Object[] { input1, input2 };
+                ++ i;
             }
         }
         data.close();
-        return testData.iterator();
+        return testData;
     }
 
     @AfterClass(alwaysRun = true)

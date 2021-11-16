@@ -1,6 +1,7 @@
 package CucumberTests;
 
 import DadJokeAPIExample.DadJokesService;
+import TestNGTests.CucumberAPIParams;
 import TestNGTests.TestNGCucumberParams;
 import com.automator.handler.ReportHandler;
 import cucumber.api.DataTable;
@@ -69,12 +70,12 @@ public class APIStepDefinitions {
 
     @Given("^The user is provided a valid jokeId matching dataprovider$")
     public void theUserIsProvidedAValidJokeIdMatchingDataprovider() {
-        dadJokesService.getJoke(TestNGCucumberParams.dataList.get(0));
+        dadJokesService.getJoke(CucumberAPIParams.dataList.get(0));
     }
 
     @Then("^A joke must be returned matching dataprovider$")
     public void aJokeMustBeReturnedMatchingDataprovider() {
-        Assert.assertEquals(dadJokesService.lastJoke, TestNGCucumberParams.dataList.get(1));
+        Assert.assertEquals(dadJokesService.lastJoke, CucumberAPIParams.dataList.get(1));
     }
 
 //
