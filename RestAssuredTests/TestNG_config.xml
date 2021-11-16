@@ -2,8 +2,10 @@
 <suite name="RestAssuredTests">
     <test name="RestAssured">
         <classes>
-<!--            <class name="DadJokeAPIExample.RestAssuredTests" />-->
-            <class name="Binance.BasicAPITests" />
+<!--            <class name="DeprecatedRestAssuredExample" />-->
+<!--            <class name="Binance.BasicAPITests" />-->
+<!--            <class name="Dominoes.DominoesService" />-->
+            <class name="DadJokeAPIExample.DadJokesService" />
         </classes>
     </test>
 </suite>

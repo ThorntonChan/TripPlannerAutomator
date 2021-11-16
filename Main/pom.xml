@@ -17,6 +17,12 @@
             <version>1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.automator</groupId>
+            <artifactId>RestAssuredTests</artifactId>
+            <version>1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>

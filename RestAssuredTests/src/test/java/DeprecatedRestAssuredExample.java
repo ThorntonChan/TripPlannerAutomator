@@ -1,12 +1,10 @@
-package DadJokeAPIExample;
-
-import com.automator.handler.RestHandler;
+import com.automator.handler.RestHandler2;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class RestAssuredTests {
+public class DeprecatedRestAssuredExample {
     private String baseUrl = "https://icanhazdadjoke.com";
 
 //    @Test
@@ -40,7 +38,7 @@ public class RestAssuredTests {
     @Test
     public void applicationJsonWHandler(){
         try {
-            RestHandler dadJokeApiCall = new RestHandler();
+            RestHandler2 dadJokeApiCall = new RestHandler2();
             dadJokeApiCall.given();
             dadJokeApiCall.header("Accept", "application/json");
             dadJokeApiCall.when();

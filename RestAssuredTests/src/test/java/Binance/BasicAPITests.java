@@ -1,6 +1,6 @@
 package Binance;
 
-import com.automator.handler.RestHandler;
+import com.automator.handler.RestHandler2;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
@@ -10,7 +10,7 @@ public class BasicAPITests {
     @Test
     public void fetchData(){
         System.out.println("Running binance api test");
-        RestHandler apiHandler = new RestHandler();
+        RestHandler2 apiHandler = new RestHandler2();
         apiHandler.basicRequest("Accept" , "application/json" , "GET", baseUrl + "/api/v3/time");
         System.out.println("Response: " + apiHandler.asString());
     }
@@ -25,7 +25,7 @@ public class BasicAPITests {
         requestParams.put("quantity",  "1");
         requestParams.put("price",  "1");
         try {
-            RestHandler apiHandler = new RestHandler();
+            RestHandler2 apiHandler = new RestHandler2();
             apiHandler.given();
             apiHandler.header("Content-Type", "application/x-www-form-urlencoded");
             apiHandler.header("apiKey", BinanceModel.APIKey);
