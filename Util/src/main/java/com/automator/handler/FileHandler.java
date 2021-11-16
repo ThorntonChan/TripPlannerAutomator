@@ -1,7 +1,8 @@
 package com.automator.handler;
-import com.automator.exception.FileException;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileHandler {

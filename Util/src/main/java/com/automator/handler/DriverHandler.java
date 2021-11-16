@@ -1,25 +1,19 @@
 package com.automator.handler;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-
 import com.automator.exception.TPElementNotClickable;
 import com.automator.exception.TPElementNotFoundError;
 import com.automator.exception.TPStaleReferenceError;
 import com.automator.exception.TripPlannerException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
+import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 

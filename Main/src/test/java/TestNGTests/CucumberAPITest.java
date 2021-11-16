@@ -1,15 +1,16 @@
 package TestNGTests;
 
 
-
 import com.automator.handler.FileHandler;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.runtime.model.CucumberFeature;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @CucumberOptions(features="src/test/resources/features", glue={"CucumberTests"}, tags="@DataProviderRequired")
@@ -18,11 +19,6 @@ public class CucumberAPITest {
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() {
-//        try {
-//            tngcr = new TestNGCucumberRunner(this.getClass());
-//        } catch (Exception e) {
-//            System.out.println(this.getClass().getName());
-//        }
         System.out.println("running cucumber from testng");
     }
 

@@ -2,15 +2,12 @@ package CucumberTests;
 
 import DadJokeAPIExample.DadJokesService;
 import TestNGTests.CucumberAPIParams;
-import TestNGTests.TestNGCucumberParams;
 import com.automator.handler.ReportHandler;
-import cucumber.api.DataTable;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 import java.util.List;

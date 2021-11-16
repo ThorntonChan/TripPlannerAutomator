@@ -1,11 +1,9 @@
 package com.automator.handler;
 
-import io.restassured.*;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-
-import static org.hamcrest.core.IsEqual.equalTo;
 
 public class RestHandler2 {
     private String Url;

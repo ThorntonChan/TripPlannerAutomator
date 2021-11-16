@@ -1,9 +1,7 @@
 package com.automator.handler;
 
-import gherkin.deps.com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 
 import java.util.Map;
