@@ -10,3 +10,5 @@ RestAssuredTests/src/test/java/Binance/BinanceModel.java
 
 RestAssuredTestsDeprecated/target/ >> .gitignore
 echo APItests/target/
+APItest/target/
+APItests/target/

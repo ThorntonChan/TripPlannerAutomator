@@ -11,12 +11,6 @@
 
     <artifactId>Util</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
     <groupId>com.automator</groupId>
     <version>1</version>
