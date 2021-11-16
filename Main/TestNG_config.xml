@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="RestAssuredTests">
+    <test name="RestAssured">
+        <classes>
+            <class name="TestNGTests.CucumberAPITest" />
+        </classes>
+    </test>
+</suite>
+
+
+
+<!--<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >-->
+<!--<suite name="AddressGenerator Cucumber Abstract class">-->
+<!--&lt;!&ndash;    <test name="Address generation Abstract class">&ndash;&gt;-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="TestNGTests.AddressGeneratorTestNG" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--&lt;!&ndash;    <test name="TripPlanner TestNG isolated">&ndash;&gt;-->
+<!--&lt;!&ndash;        <parameter name="to" value="130 George St Parramatta"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <parameter name="from" value="61 John Road Cherrybrook"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="TestNGTests.TripPlannerTestNG">&ndash;&gt;-->
+<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="findRoute" />&ndash;&gt;-->
+<!--&lt;!&ndash;                    <exclude name="omit" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
+<!--&lt;!&ndash;            </class>&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--&lt;!&ndash;    <test name="DadJokeAPIExample">&ndash;&gt;-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="DeprecatedRestAssuredExample" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--&lt;!&ndash;    <test name="IntegrateCuke CucumberTestRuner composition class">&ndash;&gt;-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="TestNGTests.IntegrateCuke" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--</suite>-->
+
+<!--&lt;!&ndash;<test name="test groups">&ndash;&gt;-->
+<!--&lt;!&ndash;<groups>&ndash;&gt;-->
+<!--&lt;!&ndash;    <run>&ndash;&gt;-->
+<!--&lt;!&ndash;        <include name="regression" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </run>&ndash;&gt;-->
+<!--&lt;!&ndash;</groups>&ndash;&gt;-->
+<!--&lt;!&ndash;<classes>&ndash;&gt;-->
+<!--&lt;!&ndash;    <class&ndash;&gt;-->
+<!--&lt;!&ndash;            name="com.baeldung.SummationServiceTest" />&ndash;&gt;-->
+<!--&lt;!&ndash;</classes>&ndash;&gt;-->
+<!--&lt;!&ndash;</test>&ndash;&gt;-->

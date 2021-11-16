@@ -14,6 +14,7 @@ public class DadJokesService {
             lastJokeId = entry.getKey();
             lastJoke = entry.getValue();
         }
+        System.out.println(lastJokeId + ":");
         System.out.println(lastJoke);
     }
 
@@ -23,6 +24,7 @@ public class DadJokesService {
             lastJokeId = entry.getKey();
             lastJoke = entry.getValue();
         }
+        System.out.println(lastJokeId + ":");
         System.out.println(lastJoke);
     }
 

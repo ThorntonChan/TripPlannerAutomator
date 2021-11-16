@@ -44,7 +44,7 @@
 <!--                        </includes>-->
                         <suiteXmlFiles>
                             <suiteXmlFile>
-                                src\test\java\TestNGTests\TestNG_config.xml
+                                TestNG_config.xml
                             </suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
