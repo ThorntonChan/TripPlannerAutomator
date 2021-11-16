@@ -1,14 +1,8 @@
 package DadJokeAPIExample;
 
 import com.automator.handler.RestHandler;
-import com.automator.handler.RestHandler2;
-import io.restassured.RestAssured;
-import org.testng.annotations.Test;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.hamcrest.core.IsEqual.equalTo;
 
 public class DadJokeApiMethods {
     private RestHandler restHandler = new RestHandler();

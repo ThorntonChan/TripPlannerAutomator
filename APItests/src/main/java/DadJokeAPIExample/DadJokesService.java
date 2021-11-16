@@ -17,8 +17,8 @@ public class DadJokesService {
         System.out.println(lastJoke);
     }
 
-    public void getLastJoke(){
-        Map<String, String> jokes = dadJokeApiMethods.getDadJoke(lastJokeId);
+    public void getJoke(String jokeId){
+        Map<String, String> jokes = dadJokeApiMethods.getDadJoke(jokeId);
         for (Map.Entry<String, String> entry : jokes.entrySet()){
             lastJokeId = entry.getKey();
             lastJoke = entry.getValue();

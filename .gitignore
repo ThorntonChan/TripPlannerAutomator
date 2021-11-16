@@ -8,3 +8,5 @@ Util/target/
 Websites/target/
 RestAssuredTests/src/test/java/Binance/BinanceModel.java
 
+RestAssuredTestsDeprecated/target/ >> .gitignore
+echo APItests/target/

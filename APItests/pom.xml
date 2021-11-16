@@ -9,8 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Util</artifactId>
+    <artifactId>APItests</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>com.automator</groupId>
+            <artifactId>Util</artifactId>
+            <version>1</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -18,8 +24,6 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-    <groupId>com.automator</groupId>
-    <version>1</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

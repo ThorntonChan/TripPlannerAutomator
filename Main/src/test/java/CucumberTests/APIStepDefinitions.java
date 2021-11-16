@@ -1,5 +1,6 @@
 package CucumberTests;
 
+import DadJokeAPIExample.DadJokesService;
 import TestNGTests.TestNGCucumberParams;
 import com.automator.handler.ReportHandler;
 import cucumber.api.DataTable;
@@ -14,6 +15,8 @@ import org.junit.Assert;
 
 public class APIStepDefinitions {
     private DadJokesService dadJokesService = new DadJokesService();
+    private String cachedJoke;
+    private String cachedJokeId;
 
     public APIStepDefinitions(){}
 
@@ -30,18 +33,24 @@ public class APIStepDefinitions {
 
     @Given("^the user has requested a joke$")
     public void theUserHasRequestedAJoke() {
-        dadJokesService.getRandomJoke();
+        dadJokesService.getRandomDadJoke();
     }
 
     @Then("^a joke and jokeID must be returned$")
     public void aJokeAndJokeIDMustBeReturned() {
+        Assert.assertNotNull(dadJokesService.lastJoke);
+        Assert.assertNotNull(dadJokesService.lastJokeId);
     }
 
     @Given("^The user searches a jokeID$")
     public void theUserSearchesAJokeID() {
+        cachedJoke = dadJokesService.lastJoke;
+        cachedJokeId = dadJokesService.lastJokeId;
+        dadJokesService.getJoke(cachedJokeId);
     }
 
     @Then("^The joke returned must be consistent$")
     public void theJokeReturnedMustBeConsistent() {
+        Assert.assertEquals(cachedJoke, dadJokesService.lastJoke);
     }
 }

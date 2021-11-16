@@ -23,6 +23,18 @@
             <version>1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.automator</groupId>
+            <artifactId>APITests</artifactId>
+            <version>1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.automator</groupId>
+            <artifactId>APItests</artifactId>
+            <version>1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>
