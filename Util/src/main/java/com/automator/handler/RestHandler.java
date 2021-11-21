@@ -1,9 +1,11 @@
 package com.automator.handler;
 
 import io.restassured.RestAssured;
+import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -32,16 +34,16 @@ public class RestHandler {
 
     public void quickRequest(String request_type, String endpoint, Map<String, String> headerParams, Map<String, String> bodyParams){
         JSONObject body = bodyMaptoJSON(bodyParams);
-            RestAssured
-                .given();
-                for (Map.Entry<String, String> head : headerParams.entrySet()) {
-                    RestAssured.requestSpecification.header(head.getKey(), head.getValue());
-                }
-            response = RestAssured.requestSpecification.body(body.toJSONString())
-                .when()
-                .request(request_type, endpoint)
-                .then()
-                .extract().response();
+        RestAssured
+            .given();
+            for (Map.Entry<String, String> head : headerParams.entrySet()) {
+                RestAssured.requestSpecification.header(head.getKey(), head.getValue());
+            }
+        response = RestAssured.requestSpecification.body(body.toJSONString())
+            .when()
+            .request(request_type, endpoint)
+            .then()
+            .extract().response();
     }
 
     public JSONObject bodyMaptoJSON(Map<String, String> params){
@@ -51,6 +53,37 @@ public class RestHandler {
         }
         return bodyBuilder;
     }
+
+//    public Map<Object, Map<String, Object>> deserializeToMaps(){
+//        if (response == null)
+//            return null;
+//        Map<Object, Map<String, Object>> body = response.as(new TypeRef<Map<Object, Map<String, Object>>>() {});
+//        return body;
+//    }
+
+    public Map<String, Object> deserializeToMap(){
+        if (response == null)
+            return null;
+        return response.as(new TypeRef<Map<String, Object>>() {});
+    }
+    public List<Map<String, Object>> deserializeToMaps(){
+        if (response == null)
+            return null;
+        return response.as(new TypeRef<List<Map<String, Object>>>() {});
+    }
+
+    public List<Object> deserializeToList(){
+        if (response == null)
+            return null;
+        return response.as(new TypeRef<List<Object>>() {});
+    }
+
+    public List<List<Object>> deserializeToLists(){
+        if (response == null)
+            return null;
+        return response.as(new TypeRef<List<List<Object>>>() {});
+    }
+
 }
 
-    // Todo public map of Json Response
+    // TODO: nested Maps in JSON
